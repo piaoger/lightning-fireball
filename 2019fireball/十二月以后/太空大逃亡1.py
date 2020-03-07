@@ -3,7 +3,7 @@
 #太空大逃亡基本版
 import pygame,sys,random
 
-SCREEN_W,SCREEN_H = 1600,800 #屏幕尺寸
+SCREEN_W,SCREEN_H = 1000,600 #屏幕尺寸
 
 class CLS_box (object): # box类定义,陨石和飞船都是Box
     def __init__ (self,rect,speed,color = (255,255,255)):
@@ -57,13 +57,13 @@ while True:#主循环
         if event.type == pygame.KEYDOWN:#如果是按键KEYDOWN事件
               #方向键处理，改变速度
             if event.key == pygame.K_LEFT:
-                myBox.speed[0] = -1
+                myBox.speed[0] = -10
             if event.key == pygame.K_RIGHT:
-                myBox.speed[0] = 1
+                myBox.speed[0] = 5
             if event.key == pygame.K_UP:
-                myBox.speed[1] = -1
+                myBox.speed[1] = -10
             if event.key == pygame.K_DOWN:
-                myBox.speed[1] = 1
+                myBox.speed[1] = 5
 
     screen.fill((0,0,0))#背景重绘为黑色
     myBox.move() #飞船坐标计算
@@ -103,7 +103,7 @@ while True:#主循环
               True,(0,0,255))
     screen.blit(imgText,(SCREEN_W -100,0)) #在屏幕右上角绘制当前时间
     pygame.display.update()#屏幕刷新
-    clock.tick(50) #帧率可调
+    clock.tick(25) #帧率可调
                           
         
         
